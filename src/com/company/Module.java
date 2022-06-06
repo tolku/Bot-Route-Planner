@@ -15,7 +15,7 @@ public class Module {
     private char type;
     private int coordX, coordY, number, n, gridWidthX, gridLengthY;
     private String[] products;
-    private List<Module> moduleList = new ArrayList<>();
+    private static List<Module> moduleList = new ArrayList<>();
 
     public void initialize() {
         String gridFileName = Main.getGridFileName();
@@ -57,7 +57,7 @@ public class Module {
         }
     }
 
-    List<Module> getModuleList() {
+    static List<Module> getModuleList() {
         return moduleList;
     }
 
