@@ -42,8 +42,8 @@ public class Main {
             for (int innerCounter = 0; innerCounter < grid.getN(); ++innerCounter){
                 if (Objects.equals(jacek.getObjective(), grid.getProducts(innerCounter, grid, counter))){
                     wantedProdGrid.add(new Module());
-                    wantedProdGrid.get(foundProducts).setCoordX(grid.getModuleList().get(counter).getCoordX());
-                    wantedProdGrid.get(foundProducts).setCoordY(grid.getModuleList().get(counter).getCoordY());
+                    wantedProdGrid.get(foundProducts).setCoordX(Module.getModuleList().get(counter).getCoordX());
+                    wantedProdGrid.get(foundProducts).setCoordY(Module.getModuleList().get(counter).getCoordY());
                     ++foundProducts;
                 }
             }
@@ -53,10 +53,10 @@ public class Main {
     public void unactivePlaceFinder(Bot jacek, Module grid, List<Module> unactiveFields){
         int unactiveFieldsCounter = 0;
         for (int counter = 0; counter < moduleNumber(grid); ++counter){
-            if (grid.getModuleList().get(counter).getType() == 'O'){
+            if (Module.getModuleList().get(counter).getType() == 'O'){
                 unactiveFields.add(new Module());
-                unactiveFields.get(unactiveFieldsCounter).setCoordX(grid.getModuleList().get(counter).getCoordX());
-                unactiveFields.get(unactiveFieldsCounter).setCoordY(grid.getModuleList().get(counter).getCoordY());
+                unactiveFields.get(unactiveFieldsCounter).setCoordX(Module.getModuleList().get(counter).getCoordX());
+                unactiveFields.get(unactiveFieldsCounter).setCoordY(Module.getModuleList().get(counter).getCoordY());
                 ++unactiveFieldsCounter;
             }
         }
@@ -64,10 +64,10 @@ public class Main {
 
     public void numberingModules(Bot jacek, Module grid){
         for (int counter = 0; counter < moduleNumber(grid); ++counter){
-            int xDist = Math.abs(jacek.getCoordX() - grid.getModuleList().get(counter).getCoordX());
-            int yDist = Math.abs(jacek.getCoordY() - grid.getModuleList().get(counter).getCoordY());
+            int xDist = Math.abs(jacek.getCoordX() - Module.getModuleList().get(counter).getCoordX());
+            int yDist = Math.abs(jacek.getCoordY() - Module.getModuleList().get(counter).getCoordY());
             int distance = xDist + yDist;
-            grid.getModuleList().get(counter).setNumber(distance);
+            Module.getModuleList().get(counter).setNumber(distance);
         }
     }
 

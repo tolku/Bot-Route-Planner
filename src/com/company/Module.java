@@ -90,7 +90,7 @@ public class Module {
     }
 
     String getProducts(int n, Module grid, int moduleNumber) { //gdzie n to poziom, z kto
-        return grid.getModuleList().get(moduleNumber).products[n];
+        return Module.getModuleList().get(moduleNumber).products[n];
     }
 
     void setCoordX(int coordX) {
